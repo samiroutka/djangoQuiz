@@ -1,0 +1,17 @@
+<div class="result">
+  <p class="result__title">Результаты</p>
+  <div class="result__rows">
+    <div class="result__row">
+      <p class="result__nickname">Имя</p>
+      <p class="result__points">Количество баллов</p>
+    </div>
+    <hr>
+    {% for user in users %}
+    <div class="result__row">
+      <p class="result__nickname">{{ user.nickname }}</p>
+      <p class="result__points">{{ user.right_answers }}</p>
+    </div>
+    <hr>
+    {% endfor %}
+  </div>
+</div>

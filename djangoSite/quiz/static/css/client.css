@@ -1,0 +1,277 @@
+
+body{
+  margin: 0;
+}
+body *{
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+/* ---------------login----------------- */
+
+.login__title{
+  margin-bottom: 20vw;
+
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.login__wrapper form{
+  display: flex;
+  flex-direction: column;
+}
+.login__wrapper form *{
+  display: block;
+}
+
+.login__label{
+  font-size: 2em;
+  text-align: center;
+}
+#login{
+  margin: 0 auto;
+  margin-top: 5vw;
+  width: 60vw;
+  
+  font-size: 1.5em;
+
+  border: 2px solid black;
+}
+.login__submit{
+  margin: 0 auto;
+  margin-top: 20vw;
+
+  font-size: 2em;
+
+  background-color: rgb(150, 150, 255);
+  border: 0;
+  border-radius: 2vw/2vw;
+}
+
+/* -----------wait1------------- */
+
+.wait__wrapper img{
+  margin: 0 auto;
+  margin-top: 20vw;
+  width: 70vw;
+  display: block;
+
+  border-radius: 2vw/2vw;
+}
+
+/* -----------wait2------------- */
+
+.wait__wrapper2 img{
+  margin: 0 auto;
+  margin-top: 20vw;
+  width: 70vw;
+  display: block;
+
+  border-radius: 2vw/2vw;
+}
+
+/*------------ questions ------------ */
+
+.questions__wrapper{
+  width: 100vw;
+  overflow-x: hidden;
+} 
+.questions{
+  height: 100vh;
+  transform: translateX(-0vw); /* зависит от количества отвеченных вопросов */
+  display: flex;
+}
+.questions__questionWrapper{
+  margin: 0 auto;
+  width: 90vw;
+}
+
+.questions__numberOfQuestion{
+  margin: 5vw 0;
+
+  font-size: 1.2em;
+}
+.questions__question{
+  margin: 0;
+  margin-bottom: 5vw;
+
+  font-size: 1.7em;
+}
+.questions img{
+  margin: 5vw auto;
+  width: fit-content;
+  max-width: 95%;
+  height: 70vw;
+  display: block;
+  object-fit: contain;
+}
+.questions__wrapperOfAnswers{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.questions__answer{
+  width: 28%;
+  height: fit-content;
+  padding: 2%;
+  box-sizing: border-box;
+  
+  font-size: 1em;
+  text-align: center;
+  user-select: none;
+  word-wrap: break-word;
+
+  border-radius: 1vw/1vw;
+  background-color: rgba(0, 255, 255, 0.4);
+  transition: all .1s linear;
+}
+.selected{
+  background-color: rgba(0, 255, 255, 0.2);
+}
+.questions__sendAnswer{
+  margin: 0 auto;
+  margin-top: 5vw;
+  display: block;
+
+  font-size: 1.5em;
+
+  border: 0;
+  border-radius: .5vw/.5vw;
+  background-color: rgb(222, 187, 255);
+}
+
+/*------------- result ------------ */
+
+hr{
+  width: 100%;
+  background-color: black;
+  border: .5px solid black;
+}
+
+
+.result__title{
+  text-align: center;
+}
+
+.result__rows{
+  padding: 2%;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  background-color: wheat;
+  border-radius: 1vw/1vw;
+}
+.result__rows p{
+  margin: auto;
+
+  text-align: center;
+}
+.result__row{
+  max-height: 100px;
+  display: flex;
+}
+.result__number{
+  width: 5%;
+}
+.result__question{
+  width: 50%;
+}
+.result__result{
+  padding: 2%;
+  width: 20%;
+}
+.result__correctAnswer{
+  width: 25%;
+}
+
+
+.correct{
+  background: url(images/check-circle.svg) no-repeat center;
+  background-size: contain;
+}
+.wrong{
+  background: url(images/x-circle.svg) no-repeat center;
+  background-size: contain;
+}
+
+/* --------------------------- */
+
+.hidden{
+  display: none;
+}
+
+/* -----------------rotate-phone---------------------- */
+
+@media (min-width: 600px){
+
+/* ----login---- */
+
+.login__title{
+  margin-bottom: 5vw;
+
+  font-size: 3em;
+}
+
+.login__label{
+  font-size: 2.5em;
+}
+#login{
+  width: 20vw;
+  margin-top: 2vw;
+
+  font-size: 1.7em;
+}
+.login__submit{
+  margin-top: 5vw;
+
+  font-size: 2.5em;
+}
+
+/* ----wait1----- */
+
+.wait__wrapper h1{
+  font-size: 3em;
+}
+
+.wait__wrapper img{
+  margin-top: 5vw;
+  width: 40vw;
+}
+/* ----wait2----- */
+
+.wait__wrapper2 h1{
+  font-size: 2.8em;
+}
+
+.wait__wrapper2 img{
+  margin-top: 5vw;
+  width: 30vw;
+}
+
+/*----questions---- */
+
+.questions__numberOfQuestion{
+  margin: 1vw 0;
+}
+.questions__question{
+  margin-bottom: 0;
+}
+.questions img{
+  margin: 1vw auto;
+  height: 50vh;
+}
+.questions__answer{
+  padding: 1%;
+
+  font-size: 1.5em;
+}
+.questions__sendAnswer{
+  margin-top: 1vw;
+
+  font-size: 2em;
+}
+
+}
+

@@ -1,0 +1,161 @@
+
+body{
+  margin: 0;
+}
+body *{
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+/* ----------------password----------------- */
+
+.password__wrapper{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.password__wrapper form{
+  display: flex;
+  flex-direction: column;
+
+  font-size: 2em;
+}
+.password__wrapper form *{
+  margin-bottom: 2vw;
+}
+
+/* ----------------prestartQuiz----------------- */
+
+.prestartQuiz__title{
+  text-align: center;
+}
+
+.prestartQuiz__clients{
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.prestartQuiz__clinet{
+  padding: 1%;
+
+  font-size: 1.5em;
+
+  border: 1px solid black;
+  border-radius: 1vw/1vw;
+  background-color: rgb(255, 220, 173);
+}
+
+.prestartQuiz__reset{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.start{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.quit{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/*--------------------questions-------------------- */
+
+.questions__wrapper{
+  width: 100vw;
+  overflow: hidden;
+} 
+.questions{
+  height: 100vh;
+  transform: translateX(-0vw); /* зависит от количества отвеченных вопросов */
+  display: flex;
+}
+
+.questions__questionWrapper{
+  margin: 0 auto;
+  margin-left: 2vw;
+  width: 98vw;
+  position: relative;
+}
+.questions__numberOfQuestion{
+  margin: 2vw 0;
+  
+  font-size: 1.3em;
+}
+.questions__question{
+  margin: 2vw 0;
+  
+  font-size: 1.8em;
+}
+.questions img{
+  margin: 2vw auto;
+  width: 50vw;
+  height: 50vh;
+  object-fit: contain;
+  display: block;
+}
+.questions__wrapperOfAnswers{
+  margin-right: 2vw;
+  display: flex;
+  justify-content: space-between;
+}
+.questions__answer{
+  width: 28%;
+  padding: 2%;
+  box-sizing: border-box;
+
+  font-size: 1.3em;
+  text-align: center;
+  user-select: none;
+  word-wrap: break-word;
+
+  border-radius: 1vw/1vw;
+  background-color: rgba(0, 255, 255, 0.4);
+  transition: all .1s linear;
+}
+
+.questions__nextQuestion{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+}
+
+/*--------------------result-------------------- */
+
+hr{
+  width: 100%;
+  background-color: black;
+}
+
+.result__title{
+  text-align: center;
+}
+
+.result__rows{
+  margin: 0 auto;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+.result__row{
+  display: flex;
+  justify-content: space-between;
+}
+.result__nickname{
+  width: 60%;
+}
+.result__points{
+  width: 30%;
+}
+
+/* ------------------------------------------------ */
+
+.hidden{
+  display: none;
+}

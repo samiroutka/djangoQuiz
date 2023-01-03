@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <link rel="stylesheet" href="{% static 'quiz/static/css/client.css' %}">
+</head>
+<body>
+{% csrf_token %}
+
+
+<div class="login__wrapper">
+  <h1 class="login__title">Добро пожаловать на Quiz</h1>
+  <form action="">
+    <label for="login" class="login__label">Введите свой ник</span></label>
+    <input type="text" placeholder="ЛёхаМашина228" name="login" id="login">
+    <input type="submit" value="Отправить" name="" class="login__submit">
+  </form>
+</div>
+
+<div class="wait__wrapper hidden">
+  <h1>Дождитесь регистрации других участников ...</h1>
+  <img src="{% static 'quiz/static/css/images/wait3.gif' %}" alt="">
+</div>
+
+<div class="questions__wrapper">
+  <div class="questions hidden">
+    {% for object in question_objects %}
+    <div class="questions__questionWrapper">
+      <h6 class="questions__numberOfQuestion">Вопрос <span>{{ object.number_of_question }}</span></h6>
+      <h5 class="questions__question">{{ object.question }}</h5>
+      <img src="{{ object.image.url }}" alt="">
+      <div class="questions__wrapperOfAnswers">
+        <p class="questions__answer questions__answer_1" id="1">{{ object.answer1 }}</p>
+        <p class="questions__answer questions__answer_2" id="2">{{ object.answer2 }}</p>
+        <p class="questions__answer questions__answer_3" id="3">{{ object.answer3 }}</p>
+      </div>
+      <button class="questions__sendAnswer">Ответить</button>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="wait__wrapper2 hidden">
+  <h1>Дождитесь пока другие участники ответят на вопрос ...</h1>
+  <img src="{% static 'quiz/static/css/images/wait2.gif' %}" alt="">
+</div>
+
+<div class="result">
+  <div class="result__wait hidden">Подсчитываем результаты ...</div>
+  <div class="result__mainPage hidden">
+    <h1 class="result__title">Результаты</h1>
+    <div class="result__rows">
+      <div class="result__row">
+        <p class="result__number">Номер вопроса</p>
+        <p class="result__question">Вопрос</p>
+        <p style="width: 20%; text-align: center;">Ваш ответ</p>
+        <p class="result__correctAnswer">Правильный ответ</p>
+      </div>
+      <hr>
+      {% for object in question_objects %}
+      <div class="result__row">
+        <p class="result__number">{{ object.number_of_question }}</p>
+        <p class="result__question">{{ object.question }}</p>
+        <img src="" alt="" class="result__result">
+        <p class="result__correctAnswer">{{ object.correct_answer }}</p>
+      </div>
+      <hr>
+      {% endfor %}
+      <p>Внимание! После обновления страницы вы зпкончите Quiz</p>
+    </div>
+  </div>
+</div>
+
+
+<script src="{% static 'quiz/static/js/client.js' %}"></script>
+</body>
+</html>

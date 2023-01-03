@@ -1,0 +1,61 @@
+
+body{
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+body *{
+  transition: all .1s linear;
+}
+
+/* ------------------------------- */
+
+h1{
+  font-size: 1.5em;
+}
+
+span{
+  margin: -.15em;
+  display: inline-block;
+
+  font-weight: 900;
+}
+@keyframes span_anim {
+0%{
+  transform: translateY(0);
+}
+50%{
+  transform: translateY(-15px);
+}
+100%{
+  transform: translateY(0);
+}
+}
+
+img{
+  margin: 10vw auto;
+  width: 80vw;
+  display: block;
+
+  border-radius: 2vw/2vw;
+}
+
+/* ----------------rotate-phone---------------- */
+
+@media (min-width: 600px) {
+  
+h1{
+  font-size: 2em;
+}
+
+img{
+  margin: 5vw auto;
+  width: 40vw;
+
+  border-radius: 2vw/2vw;
+}
+
+}
+
+
+
+

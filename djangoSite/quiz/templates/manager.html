@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manager</title>
+  <link rel="stylesheet" href="{% static 'quiz/static/css/manager.css' %}">
+</head>
+<body>
+{% csrf_token %}
+
+
+<div class="password__wrapper">
+  <form action="">
+    <label for="password">Введите пароль</label>
+    <input type="password" name="password" id="password">
+    <input type="submit" value="Проверить пароль" id="submit">
+  </form>
+</div>
+
+<div class="prestartQuiz__wrapper hidden">
+  <h1 class="prestartQuiz__title">Участники</h1>
+  <div class="prestartQuiz__clients">
+    {% for object in client_objects %}
+    <p class="prestartQuiz__clinet">{{ object.nickname }}</p>
+    {% endfor %}
+  </div>
+  <button class="prestartQuiz__reset">Reset</button>
+</div>
+
+<button class="quit hidden"><< Выйти</button>
+<button class="start hidden">Начать >></button>
+
+<div class="questions__wrapper">
+  <div class="questions hidden">
+    {% for object in question_objects %}
+    <div class="questions__questionWrapper">
+      <h6 class="questions__numberOfQuestion">Вопрос <span>{{ object.number_of_question }}</span></h6>
+      <h5 class="questions__question">{{ object.question }}</h5>
+      <img src="{{ object.image.url }}" alt="">
+      <div class="questions__wrapperOfAnswers">
+        <p class="questions__answer questions__answer_1" id="1">{{ object.answer1 }}</p>
+        <p class="questions__answer questions__answer_2" id="2">{{ object.answer2 }}</p>
+        <p class="questions__answer questions__answer_3" id="3">{{ object.answer3 }}</p>
+      </div>
+      <button class="questions__nextQuestion">Следующий вопрос >></button>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="result hidden">
+  <p class="result__title">Результаты</p>
+  <div class="result__rows">
+    <div class="result__row">
+      <p class="result__nickname">Имя</p>
+      <p class="result__points">Количество баллов</p>
+    </div>
+    <hr>
+  </div>
+</div>
+
+  
+<script src="{% static 'quiz/static/js/manager.js' %}"></script>
+</body>
+</html>
